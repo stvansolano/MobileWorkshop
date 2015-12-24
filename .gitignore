@@ -4,11 +4,7 @@
 # User-specific files
 *.suo
 *.user
-*.userosscache
 *.sln.docstates
-
-# User-specific files (MonoDevelop/Xamarin Studio)
-*.userprefs
 
 # Build results
 [Dd]ebug/
@@ -22,18 +18,14 @@ bld/
 [Bb]in/
 [Oo]bj/
 
-<<<<<<< HEAD
-# Visual Studio 2015 cache/options directory
-=======
-# Visual Studo 2015 cache/options directory
->>>>>>> e1cc3022a1a0b9e54de1415f2c69a528ae318231
-.vs/
+# Roslyn cache directories
+*.ide/
 
 # MSTest test Results
 [Tt]est[Rr]esult*/
 [Bb]uild[Ll]og.*
 
-# NUNIT
+#NUNIT
 *.VisualState.xml
 TestResult.xml
 
@@ -42,13 +34,6 @@ TestResult.xml
 [Rr]eleasePS/
 dlldata.c
 
-<<<<<<< HEAD
-# DNX
-project.lock.json
-artifacts/
-
-=======
->>>>>>> e1cc3022a1a0b9e54de1415f2c69a528ae318231
 *_i.c
 *_p.c
 *_i.h
@@ -101,11 +86,7 @@ _ReSharper*/
 *.[Rr]e[Ss]harper
 *.DotSettings.user
 
-<<<<<<< HEAD
-# JustCode is a .NET coding add-in
-=======
 # JustCode is a .NET coding addin-in
->>>>>>> e1cc3022a1a0b9e54de1415f2c69a528ae318231
 .JustCode
 
 # TeamCity is a build add-in
@@ -144,17 +125,9 @@ publish/
 # Publish Web Output
 *.[Pp]ublish.xml
 *.azurePubxml
-<<<<<<< HEAD
-## TODO: Comment the next line if you want to checkin your
-## web deploy settings but do note that will include unencrypted
-## passwords
-#*.pubxml
-
-=======
 # TODO: Comment the next line if you want to checkin your web deploy settings 
 # but database connection strings (with potential passwords) will be unencrypted
 *.pubxml
->>>>>>> e1cc3022a1a0b9e54de1415f2c69a528ae318231
 *.publishproj
 
 # NuGet Packages
@@ -163,7 +136,7 @@ publish/
 **/packages/*
 # except build/, which is used as an MSBuild target.
 !**/packages/build/
-# Uncomment if necessary however generally it will be regenerated when needed
+# If using the old MSBuild-Integrated Package Restore, uncomment this:
 #!**/packages/repositories.config
 
 # Windows Azure Build Output
@@ -173,18 +146,9 @@ csx/
 # Windows Store app package directory
 AppPackages/
 
-<<<<<<< HEAD
-# Visual Studio cache files
-# files ending in .cache can be ignored
-*.[Cc]ache
-# but keep track of directories ending in .cache
-!*.[Cc]ache/
-
 # Others
-=======
-# Others
-*.[Cc]ache
->>>>>>> e1cc3022a1a0b9e54de1415f2c69a528ae318231
+sql/
+*.Cache
 ClientBin/
 [Ss]tyle[Cc]op.*
 ~$*
@@ -194,11 +158,6 @@ ClientBin/
 *.pfx
 *.publishsettings
 node_modules/
-<<<<<<< HEAD
-orleans.codegen.cs
-=======
-bower_components/
->>>>>>> e1cc3022a1a0b9e54de1415f2c69a528ae318231
 
 # RIA/Silverlight projects
 Generated_Code/
@@ -223,19 +182,9 @@ UpgradeLog*.htm
 # Microsoft Fakes
 FakesAssemblies/
 
-# Node.js Tools for Visual Studio
-.ntvs_analysis.dat
+*.userprefs
 
-# Visual Studio 6 build log
-*.plg
+run_iOS_XTC.sh
+run_Android_XTC.sh
 
-# Visual Studio 6 workspace options file
-*.opt
-<<<<<<< HEAD
-
-# LightSwitch generated files
-GeneratedArtifacts/
-_Pvt_Extensions/
-ModelManifest.xml
-=======
->>>>>>> e1cc3022a1a0b9e54de1415f2c69a528ae318231
+.vs/config/
