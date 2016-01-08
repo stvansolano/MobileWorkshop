@@ -11,6 +11,7 @@ Visual Studio 2015: https://www.visualstudio.com/en-us/downloads/download-visual
 
 ### Recommended Emulators for Android
 [Xamarin Android Player](https://xamarin.com/android-player)
+
 [Genymotion](https://www.genymotion.com/#!/download)
 
 ## Developing a Xamarin.Forms app from scratch
