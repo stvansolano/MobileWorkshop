@@ -3,9 +3,9 @@
 ## Getting Xamarin installed
 Install Xamarin platform.
 
-For Windows/Mac: https://xamarin.com/download
+- For Windows/Mac: https://xamarin.com/download
 
-Or you can get it by installing Visual Studio 2015
+- Or you can get it by installing Visual Studio 2015
 
 Visual Studio 2015: https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx
 
@@ -40,5 +40,3 @@ Then let's use a MVVM folder structure like the following
 [Introducing Xamarin 4](https://blog.xamarin.com/introducing-xamarin-4/)
 
 [Adding Material Design to Xamarin Apps](https://blog.xamarin.com/introduction-to-android-material-design/)
-
-[Lucky Winner source code](https://github.com/stvansolano/lucky-winner)
