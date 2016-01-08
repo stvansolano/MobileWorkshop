@@ -1,18 +1,25 @@
 #Xamarin 4 Workshop
 
 ## Getting Xamarin installed
+Install Xamarin platform.
 
-## Recommended Emulators for Android
+For Windows/Mac: https://xamarin.com/download
+
+Or you can get it by installing Visual Studio 2015
+
+Visual Studio 2015: https://www.visualstudio.com/en-us/downloads/download-visual-studio-vs.aspx
+
+### Recommended Emulators for Android
 [Xamarin Android Player](https://xamarin.com/android-player)
 [Genymotion](https://www.genymotion.com/#!/download)
 
 ## Developing a Xamarin.Forms app from scratch
-Pick the Xamarin.Forms template from the available list inside Visual Studio/Xamarin Studio:
-
-![setup](http://stvansolano.github.io/2015/12/01/Xamarin4-has-everything-you-need-to-create-great-mobile-apps/setup.png)
 
 In Visual Studio:  New Project -> Installed -> Visual C# -> Cross-Platform -> Blank App (Xamarin.Forms Portable)
 In Xamarin Studio: File -> New -> Solution -> Cross-platform -> App -> Xamarin.Forms App (Use Portable Class Library)
+
+![setup](http://stvansolano.github.io/2015/12/01/Xamarin4-has-everything-you-need-to-create-great-mobile-apps/setup.png)
+
 Set project name to "MobileWorkshop"
 
 By doing so will get:
