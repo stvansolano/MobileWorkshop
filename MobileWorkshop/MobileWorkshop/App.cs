@@ -1,4 +1,5 @@
-﻿using Xamarin.Forms;
+﻿using MobileWorkshop.Pages;
+using Xamarin.Forms;
 
 [assembly: Xamarin.Forms.Xaml.XamlCompilation(Xamarin.Forms.Xaml.XamlCompilationOptions.Compile)]
 namespace MobileWorkshop
@@ -8,7 +9,7 @@ namespace MobileWorkshop
         public App()
         {
             // The root page of your application
-            MainPage = new ContentPage
+            MainPage = new MainPage(); /*new ContentPage
             {
                 Content = new StackLayout
                 {
@@ -20,7 +21,7 @@ namespace MobileWorkshop
                         }
                     }
                 }
-            };
+            };*/
         }
 
         protected override void OnStart()
