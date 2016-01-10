@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using Xamarin.Forms;
 
-using Xamarin.Forms;
-
+[assembly: Xamarin.Forms.Xaml.XamlCompilation(Xamarin.Forms.Xaml.XamlCompilationOptions.Compile)]
 namespace MobileWorkshop
 {
     public class App : Application
@@ -20,7 +16,7 @@ namespace MobileWorkshop
                     Children = {
                         new Label {
                             XAlign = TextAlignment.Center,
-                            Text = "Welcome to Xamarin Forms!"
+                            Text = "Hello World, Xamarin Forms!"
                         }
                     }
                 }
