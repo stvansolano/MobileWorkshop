@@ -2,10 +2,15 @@
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
 									xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 									x:Class="MobileWorkshop.Pages.MainPage"
-									Detail="{Binding Path=CurrentView}"
 									Title="Mobile Workshop">
 	<MasterDetailPage.Master>
-		<ContentPage Title="Master" BackgroundColor="#404040" >
+		<ContentPage Title="Menu" BackgroundColor="#404040">
+			<ContentPage.Icon>
+				<OnPlatform x:TypeArguments="FileImageSource">
+					<OnPlatform.iOS>menu.png</OnPlatform.iOS>
+				</OnPlatform>
+			</ContentPage.Icon>
+
 			<ContentPage.Padding>
 				<OnPlatform x:TypeArguments="Thickness">
 					<OnPlatform.iOS>5, 20, 0, 0</OnPlatform.iOS>
