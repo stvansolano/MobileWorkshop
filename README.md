@@ -44,7 +44,7 @@ Let's set the project structure to be used later in this tutorial:
 
 ## Hello World, Xamarin.Forms!
 
-![Hello World!](http://stvansolano.github.io/2016/01/04/Workshop-de-Xamarin-4-en-BrainStation/hellowWorld.png)
+![Hello World!](http://stvansolano.github.io/2016/01/04/Workshop-de-Xamarin-4-en-BrainStation/helloWorld.png)
 
 This is the single code shared across those platforms:
 
