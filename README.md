@@ -1,4 +1,10 @@
+
 #Xamarin 4 Workshop
+
+## Requirements
+
+System requirements: 
+https://developer.xamarin.com/guides/xamarin-forms/getting-started/installation/
 
 ## Getting Xamarin installed
 Install Xamarin platform.
@@ -16,12 +22,15 @@ Visual Studio 2015: https://www.visualstudio.com/en-us/downloads/download-visual
 
 ## Developing a Xamarin.Forms app from scratch
 
-In Visual Studio:  New Project -> Installed -> Visual C# -> Cross-Platform -> Blank App (Xamarin.Forms Portable)
-In Xamarin Studio: File -> New -> Solution -> Cross-platform -> App -> Xamarin.Forms App (Use Portable Class Library)
+In Visual Studio:
+-- *New Project -> Installed -> Visual C# -> Cross-Platform -> Blank App (Xamarin.Forms Portable)*
 
-![setup](http://stvansolano.github.io/2015/12/01/Xamarin4-has-everything-you-need-to-create-great-mobile-apps/setup.png)
+In Xamarin Studio:
+-- *File -> New -> Solution -> Cross-platform -> App -> Xamarin.Forms App (Use Portable Class Library)*
 
-Set project name to "MobileWorkshop"
+![Setup](://stvansolano.github.io/2016/01/04/Workshop-de-Xamarin-4-en-BrainStation/setup.png)
+
+Let's inspect the App.cs main code that which is responsible for supporting the UI for all the platforms running our app:
 
 By doing so will get:
 - A Xamarin.Forms project for sharing XAML/C# code between platforms
@@ -29,14 +38,22 @@ By doing so will get:
 - iOS project
 - UWP project
 
-Then let's use a MVVM folder structure like the following
+Let's set the project structure to be used later in this tutorial:
 
-![structure](http://stvansolano.github.io/2015/12/01/Xamarin4-has-everything-you-need-to-create-great-mobile-apps/structure.png)
+{% asset_img structure.png Structure structure %}
 
-## Adding  Material Design to your Android application 
- Xamarin for Android allows you to easily incorporate *Material Design* into your Android apps. This can be done by adding the [Support Design Library](https://components.xamarin.com/gettingstarted/xamandroidsupportdesign) available as a package from NuGet.
+## Hello World, Xamarin.Forms!
+
+![structure](://stvansolano.github.io/2016/01/04/Workshop-de-Xamarin-4-en-BrainStation/structure.png)
+
+This is the single code shared across those platforms:
+
+![Hello World! Code](://stvansolano.github.io/2016/01/04/Workshop-de-Xamarin-4-en-BrainStation/helloWorldCode.png)
 
 ## Additional resources & links.
-[Introducing Xamarin 4](https://blog.xamarin.com/introducing-xamarin-4/)
-
-[Adding Material Design to Xamarin Apps](https://blog.xamarin.com/introduction-to-android-material-design/)
+- [Introducing Xamarin 4](https://blog.xamarin.com/introducing-xamarin-4/)
+- [Xamarin Forms Reference](https://developer.xamarin.com/guides/xamarin-forms/controls/)
+- [Getting Xamarin license](https://developer.xamarin.com/guides/cross-platform/getting_started/beginning_a_xamarin_trial/)
+- [Xamarin Test Cloud](https://testcloud.xamarin.com/)
+- [Adding Material Design to Xamarin Apps](https://blog.xamarin.com/introduction-to-android-material-design/)
+- [Comunidad Xamarin Costa Rica Mobile .Net Dev Group](http://xamarin.meetup.com/es-ES/)
