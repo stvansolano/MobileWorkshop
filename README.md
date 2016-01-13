@@ -28,7 +28,7 @@ In Visual Studio:
 In Xamarin Studio:
 -- *File -> New -> Solution -> Cross-platform -> App -> Xamarin.Forms App (Use Portable Class Library)*
 
-![Setup](://stvansolano.github.io/2016/01/04/Workshop-de-Xamarin-4-en-BrainStation/setup.png)
+![Setup](http://stvansolano.github.io/2016/01/04/Workshop-de-Xamarin-4-en-BrainStation/setup.png)
 
 Let's inspect the App.cs main code that which is responsible for supporting the UI for all the platforms running our app:
 
@@ -40,15 +40,15 @@ By doing so will get:
 
 Let's set the project structure to be used later in this tutorial:
 
-![structure](://stvansolano.github.io/2016/01/04/Workshop-de-Xamarin-4-en-BrainStation/structure.png)
+![structure](http://stvansolano.github.io/2016/01/04/Workshop-de-Xamarin-4-en-BrainStation/structure.png)
 
 ## Hello World, Xamarin.Forms!
 
-![Hello World!](://stvansolano.github.io/2016/01/04/Workshop-de-Xamarin-4-en-BrainStation/hellowWorld.png)
+![Hello World!](http://stvansolano.github.io/2016/01/04/Workshop-de-Xamarin-4-en-BrainStation/hellowWorld.png)
 
 This is the single code shared across those platforms:
 
-![Hello World! Code](://stvansolano.github.io/2016/01/04/Workshop-de-Xamarin-4-en-BrainStation/helloWorldCode.png)
+![Hello World! Code](http://stvansolano.github.io/2016/01/04/Workshop-de-Xamarin-4-en-BrainStation/helloWorldCode.png)
 
 ## Additional resources & links.
 - [Introducing Xamarin 4](https://blog.xamarin.com/introducing-xamarin-4/)
