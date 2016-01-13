@@ -9,7 +9,9 @@ namespace MobileWorkshop
         public App()
         {
             // The root page of your application
-            MainPage = new NavigationPage(new MainPage()); /*new ContentPage
+
+			MainPage = new MainPage ();
+			/*new ContentPage
             {
                 Content = new StackLayout
                 {
