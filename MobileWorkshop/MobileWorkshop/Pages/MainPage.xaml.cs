@@ -2,6 +2,7 @@
 using MobileWorkshop.Views;
 using Xamarin.Forms;
 
+[assembly: Xamarin.Forms.Xaml.XamlCompilation(Xamarin.Forms.Xaml.XamlCompilationOptions.Compile)]
 namespace MobileWorkshop.Pages
 {
     public partial class MainPage
@@ -10,21 +11,12 @@ namespace MobileWorkshop.Pages
         {
             HelloWorld = new HelloWorldPage();
             DataView = new ListViewPage();
-           
-			HelloWorldCommand = new Command(() =>
-			{
-				SetCurrentPage(HelloWorld);
+            BasicControls = new BasicControlsPage();
 
-				IsPresented = false;
-			});
+			HelloWorldCommand = new Command(() => SetCurrentPage(HelloWorld));
+            DataCommand = new Command(() => SetCurrentPage(DataView));
+            BasicControlsCommand = new Command(() => SetCurrentPage(BasicControls));
 
-            DataCommand = new Command(() =>
-            {
-				SetCurrentPage(DataView);
-
-                IsPresented = false;
-            });
-			
             InitializeComponent();
 
             BindingContext = this;
@@ -36,12 +28,16 @@ namespace MobileWorkshop.Pages
 			page.Title = Title;
 
 			Detail = new NavigationPage (page);
-		}
 
+            IsPresented = false;
+        }
+
+        public ICommand BasicControlsCommand { get; set; }
         public ICommand DataCommand { get; set; }
         public ICommand HelloWorldCommand { get; set; }
 
-		public ListViewPage DataView { get; set; }
+        public Page BasicControls { get; set; }
+        public ListViewPage DataView { get; set; }
 		public Page HelloWorld { get; set; }
     }
 }

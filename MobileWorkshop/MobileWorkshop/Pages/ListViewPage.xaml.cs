@@ -8,9 +8,9 @@ namespace MobileWorkshop.Pages
     {
         public ListViewPage()
         {
-            Items = new ObservableCollection<string>(new string[] { "Item #1" });
+            Items = new ObservableCollection<string>(new [] { "Item #1" });
             DeleteCommand = new Command<string>(DeleteItem);
-
+            ClearCommand = new Command(ClearAll);
             InitializeComponent();
 
             BindingContext = this;
@@ -23,7 +23,14 @@ namespace MobileWorkshop.Pages
                 }
                 Items.Add(CurrentItem.Text);
                 CurrentItem.Text = string.Empty;
+
+                CurrentItem.Focus();
             };
+        }
+
+        private void ClearAll()
+        {
+            Items.Clear();
         }
 
         private void DeleteItem(string selectedItem)
@@ -37,5 +44,7 @@ namespace MobileWorkshop.Pages
 
         public ObservableCollection<string> Items { get; set; }
         public ICommand DeleteCommand { get; set; }
+
+        public ICommand ClearCommand { get; set; }
     }
 }

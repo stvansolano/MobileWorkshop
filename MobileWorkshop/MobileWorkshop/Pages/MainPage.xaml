@@ -51,17 +51,18 @@
 						<RowDefinition Height="35" />
 						<RowDefinition Height="35" />
 						<RowDefinition Height="35" />
+						<RowDefinition Height="35" />
 					</Grid.RowDefinitions>
-
-					<Label x:Name="HelloWorldLabel" Grid.Row="0"
-								 Text="Hello World"
+					
+					<Label x:Name="ControlsLabel" Grid.Row="0"
+								 Text="Basic controls"
 								 TextColor="White"
 								 VerticalOptions="CenterAndExpand">
 						<Label.GestureRecognizers>
-							<TapGestureRecognizer Command="{Binding Path=HelloWorldCommand}" />
+							<TapGestureRecognizer Command="{Binding Path=BasicControlsCommand}" />
 						</Label.GestureRecognizers>
 					</Label>
-
+					
 					<BoxView Grid.Row="1"
 									 Grid.Column="1"
 									 BackgroundColor="Gray"
@@ -86,6 +87,16 @@
 									VerticalOptions="CenterAndExpand">
 						<Label.GestureRecognizers>
 							<TapGestureRecognizer Command="{Binding Path=DataCommand}" />
+						</Label.GestureRecognizers>
+					</Label>
+
+					<Label x:Name="HelloWorldLabel" 
+								 Grid.Row="2" Grid.Column="0"
+								 Text="Hello World"
+								 TextColor="White"
+								 VerticalOptions="CenterAndExpand">
+						<Label.GestureRecognizers>
+							<TapGestureRecognizer Command="{Binding Path=HelloWorldCommand}" />
 						</Label.GestureRecognizers>
 					</Label>
 				</Grid>

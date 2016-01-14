@@ -10,8 +10,11 @@
 			<OnPlatform.WinPhone>0, 0, 0, 0</OnPlatform.WinPhone>
 		</OnPlatform>
 	</ContentPage.Padding>
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Text="x" Command="{Binding Path=ClearCommand}" />
+	</ContentPage.ToolbarItems>
 	<StackLayout Orientation="Vertical">
-		<Label Text="New:" />
+		<Label Text="Add items (enter)" />
 		<Entry x:Name="CurrentItem" />
 		<ListView ItemsSource="{Binding Path=Items}">
 			<ListView.ItemTemplate>
