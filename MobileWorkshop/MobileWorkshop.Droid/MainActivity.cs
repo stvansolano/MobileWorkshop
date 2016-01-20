@@ -5,18 +5,17 @@ using Android.OS;
 namespace MobileWorkshop.Droid
 {
     [Activity(Label = "Mobile Workshop",
-              //Theme = "@style/AppTheme",
+              Theme = "@style/AppTheme",
               Icon = "@drawable/icon",
               MainLauncher = true,
               ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
-        //Xamarin.Forms.Platform.Android.FormsAppCompatActivity 
-
+    public class MainActivity : Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    //global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
     {
         protected override void OnCreate(Bundle bundle)
         {
-            //ToolbarResource = Resource.Layout.toolbar;
-            //TabLayoutResource = Resource.Layout.tabs;
+            ToolbarResource = Resource.Layout.toolbar;
+            TabLayoutResource = Resource.Layout.tabs;
 
             base.OnCreate(bundle);
 

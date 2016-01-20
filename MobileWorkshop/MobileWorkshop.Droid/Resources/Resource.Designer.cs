@@ -2443,32 +2443,32 @@ namespace MobileWorkshop.Droid
 		public partial class Color
 		{
 			
-			// aapt resource value: 0x7f090047
-			public const int abc_background_cache_hint_selector_material_dark = 2131296327;
+			// aapt resource value: 0x7f09004b
+			public const int abc_background_cache_hint_selector_material_dark = 2131296331;
 			
-			// aapt resource value: 0x7f090048
-			public const int abc_background_cache_hint_selector_material_light = 2131296328;
+			// aapt resource value: 0x7f09004c
+			public const int abc_background_cache_hint_selector_material_light = 2131296332;
 			
-			// aapt resource value: 0x7f090049
-			public const int abc_color_highlight_material = 2131296329;
+			// aapt resource value: 0x7f09004d
+			public const int abc_color_highlight_material = 2131296333;
 			
 			// aapt resource value: 0x7f090004
 			public const int abc_input_method_navigation_guard = 2131296260;
 			
-			// aapt resource value: 0x7f09004a
-			public const int abc_primary_text_disable_only_material_dark = 2131296330;
-			
-			// aapt resource value: 0x7f09004b
-			public const int abc_primary_text_disable_only_material_light = 2131296331;
-			
-			// aapt resource value: 0x7f09004c
-			public const int abc_primary_text_material_dark = 2131296332;
-			
-			// aapt resource value: 0x7f09004d
-			public const int abc_primary_text_material_light = 2131296333;
-			
 			// aapt resource value: 0x7f09004e
-			public const int abc_search_url_text = 2131296334;
+			public const int abc_primary_text_disable_only_material_dark = 2131296334;
+			
+			// aapt resource value: 0x7f09004f
+			public const int abc_primary_text_disable_only_material_light = 2131296335;
+			
+			// aapt resource value: 0x7f090050
+			public const int abc_primary_text_material_dark = 2131296336;
+			
+			// aapt resource value: 0x7f090051
+			public const int abc_primary_text_material_light = 2131296337;
+			
+			// aapt resource value: 0x7f090052
+			public const int abc_search_url_text = 2131296338;
 			
 			// aapt resource value: 0x7f090005
 			public const int abc_search_url_text_normal = 2131296261;
@@ -2479,11 +2479,14 @@ namespace MobileWorkshop.Droid
 			// aapt resource value: 0x7f090007
 			public const int abc_search_url_text_selected = 2131296263;
 			
-			// aapt resource value: 0x7f09004f
-			public const int abc_secondary_text_material_dark = 2131296335;
+			// aapt resource value: 0x7f090053
+			public const int abc_secondary_text_material_dark = 2131296339;
 			
-			// aapt resource value: 0x7f090050
-			public const int abc_secondary_text_material_light = 2131296336;
+			// aapt resource value: 0x7f090054
+			public const int abc_secondary_text_material_light = 2131296340;
+			
+			// aapt resource value: 0x7f090049
+			public const int accent = 2131296329;
 			
 			// aapt resource value: 0x7f090008
 			public const int accent_material_dark = 2131296264;
@@ -2632,6 +2635,12 @@ namespace MobileWorkshop.Droid
 			// aapt resource value: 0x7f09002b
 			public const int material_grey_900 = 2131296299;
 			
+			// aapt resource value: 0x7f090047
+			public const int primary = 2131296327;
+			
+			// aapt resource value: 0x7f090048
+			public const int primaryDark = 2131296328;
+			
 			// aapt resource value: 0x7f09002c
 			public const int primary_dark_material_dark = 2131296300;
 			
@@ -2680,17 +2689,20 @@ namespace MobileWorkshop.Droid
 			// aapt resource value: 0x7f09003b
 			public const int switch_thumb_disabled_material_light = 2131296315;
 			
-			// aapt resource value: 0x7f090051
-			public const int switch_thumb_material_dark = 2131296337;
+			// aapt resource value: 0x7f090055
+			public const int switch_thumb_material_dark = 2131296341;
 			
-			// aapt resource value: 0x7f090052
-			public const int switch_thumb_material_light = 2131296338;
+			// aapt resource value: 0x7f090056
+			public const int switch_thumb_material_light = 2131296342;
 			
 			// aapt resource value: 0x7f09003c
 			public const int switch_thumb_normal_material_dark = 2131296316;
 			
 			// aapt resource value: 0x7f09003d
 			public const int switch_thumb_normal_material_light = 2131296317;
+			
+			// aapt resource value: 0x7f09004a
+			public const int window_background = 2131296330;
 			
 			static Color()
 			{
@@ -3652,6 +3664,9 @@ namespace MobileWorkshop.Droid
 			// aapt resource value: 0x7f060013
 			public const int showTitle = 2131099667;
 			
+			// aapt resource value: 0x7f060082
+			public const int sliding_tabs = 2131099778;
+			
 			// aapt resource value: 0x7f060066
 			public const int snackbar_action = 2131099750;
 			
@@ -3708,6 +3723,9 @@ namespace MobileWorkshop.Droid
 			
 			// aapt resource value: 0x7f060045
 			public const int title_template = 2131099717;
+			
+			// aapt resource value: 0x7f060083
+			public const int toolbar = 2131099779;
 			
 			// aapt resource value: 0x7f060031
 			public const int top = 2131099697;
@@ -3918,6 +3936,12 @@ namespace MobileWorkshop.Droid
 			// aapt resource value: 0x7f03002f
 			public const int support_simple_spinner_dropdown_item = 2130903087;
 			
+			// aapt resource value: 0x7f030030
+			public const int tabs = 2130903088;
+			
+			// aapt resource value: 0x7f030031
+			public const int toolbar = 2130903089;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -4051,6 +4075,12 @@ namespace MobileWorkshop.Droid
 			
 			// aapt resource value: 0x7f080084
 			public const int Animation_AppCompat_DropDownUp = 2131230852;
+			
+			// aapt resource value: 0x7f080144
+			public const int AppTheme = 2131231044;
+			
+			// aapt resource value: 0x7f080145
+			public const int AppTheme_Base = 2131231045;
 			
 			// aapt resource value: 0x7f080085
 			public const int Base_AlertDialog_AppCompat = 2131230853;
