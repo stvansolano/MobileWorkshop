@@ -99,6 +99,16 @@
 							<TapGestureRecognizer Command="{Binding Path=HelloWorldCommand}" />
 						</Label.GestureRecognizers>
 					</Label>
+
+					<Label x:Name="CustomGridLabel"
+								 Grid.Row="3" Grid.Column="0"
+								 Text="Custom grid"
+								 TextColor="White"
+								 VerticalOptions="CenterAndExpand">
+						<Label.GestureRecognizers>
+							<TapGestureRecognizer Command="{Binding Path=CustomGridCommand}" />
+						</Label.GestureRecognizers>
+					</Label>
 				</Grid>
 			</Grid>
 		</ContentPage>
