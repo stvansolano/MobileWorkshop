@@ -60,12 +60,16 @@ For basic Material Design do the following:
 - Include values-v21/style.xml file under the Android.csproj /Resources folder
 - Use *Xamarin.Forms.Platform.Android.FormsAppCompatActivity* for MainActivity instead.
 
-### Adding Connectivity (aka WebServices):
+### Adding Connectivity and Web Services:
 
 - Add Connectivity NuGet package (Xam.Plugin.Connectivity)
 *In Xamarin Studio:* 
 
 PCL -> Packages folder section-> Add Package -> Xam.Plugin.Connectivity
+
+PCL -> Packages folder section-> Add Package -> Microsoft.Net.Http
+
+Include *INTERNET* permission for Android project
 
 ## Additional resources & links.
 - [Introducing Xamarin 4](https://blog.xamarin.com/introducing-xamarin-4/)
