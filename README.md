@@ -66,7 +66,6 @@ For basic Material Design do the following:
 *In Xamarin Studio:* 
 
 PCL -> Packages folder section-> Add Package -> Xam.Plugin.Connectivity
-
 PCL -> Packages folder section-> Add Package -> Microsoft.Net.Http
 
 Include *INTERNET* permission for Android project
