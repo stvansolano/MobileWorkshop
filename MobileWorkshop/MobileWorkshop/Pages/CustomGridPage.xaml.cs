@@ -21,7 +21,6 @@
         }
 
         protected FeedService FeedService { get; set; }
-
         public IEnumerable<Category> Items { get; set; }
     }
 }

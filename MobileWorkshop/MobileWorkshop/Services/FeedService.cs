@@ -24,7 +24,7 @@
             {
                 return result;
             }
-
+				
             try
             {
                 var json = await Get("/Categories/.json").ConfigureAwait(false);
