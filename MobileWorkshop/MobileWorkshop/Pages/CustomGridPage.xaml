@@ -11,7 +11,9 @@
 		</OnPlatform>
 	</ContentPage.Padding>
 	<StackLayout Orientation="Vertical">
-		<ListView ItemsSource="{Binding Source={x:Reference Name=Root}, Path=Items}">
+		<ListView ItemsSource="{Binding Source={x:Reference Name=Root}, Path=Items}"
+				  IsRefreshing="{Binding Source={x:Reference Name=Root}, Path=IsBusy}"
+				  IsPullToRefreshEnabled="true" RefreshCommand="{Binding Source={x:Reference Name=Root}, Path=RefreshCommand}">
 			<ListView.ItemTemplate>
 				<DataTemplate>
 					<TextCell Text="{Binding Path=Title}" />

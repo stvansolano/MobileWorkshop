@@ -18,7 +18,7 @@
 
         public async Task<IEnumerable<Category>> GetCategories()
         {
-            var result = new ObservableCollection<Category>();
+            var result = new List<Category>();
 
             if (Network.IsConnected == false)
             {
@@ -31,19 +31,22 @@
 				dynamic dictionary = JsonConvert.DeserializeObject<object>(json);
 
 				foreach (var item in dictionary) {
-					var category = new Category { 
-						Title = item.Category.Title
-					};
-
 					var articles = new List<Article>();
 
+					var category = new Category { 
+						Title = item.Category.Title,
+						Articles = articles
+					};
+
+					result.Add(category);
+
+					if (item.Category.Articles == null) {
+						continue;
+					}
 					foreach (var child in item.Category.Articles) {
 						articles.Add(new Article { Title = child.Title, Text = child.Text});
 					}
-
-					category.Articles = articles.ToArray();
-					result.Add(category);
-				}
+										}
             }
             catch (Exception ex)
             {

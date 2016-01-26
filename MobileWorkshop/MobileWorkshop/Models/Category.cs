@@ -7,6 +7,6 @@
     {
         public string Title { get; set; }
 
-		public Article[] Articles { get; set; }
+		public IEnumerable<Article> Articles { get; set; }
     }
 }
