@@ -11,14 +11,31 @@
 		</OnPlatform>
 	</ContentPage.Padding>
 	<StackLayout Orientation="Vertical">
-		<ListView ItemsSource="{Binding Source={x:Reference Name=Root}, Path=Items}"
-				  IsRefreshing="{Binding Source={x:Reference Name=Root}, Path=IsBusy}"
-				  IsPullToRefreshEnabled="true" RefreshCommand="{Binding Source={x:Reference Name=Root}, Path=RefreshCommand}">
-			<ListView.ItemTemplate>
-				<DataTemplate>
-					<TextCell Text="{Binding Path=Title}" />
-				</DataTemplate>
-			</ListView.ItemTemplate>
+		<Grid BackgroundColor="#2196F3"
+			  HeightRequest="60">
+			  <StackLayout Orientation="Horizontal"
+			  			   Padding="10,0,0,0">
+  			   	<Label Text="Categories" FontSize="20" TextColor="White" VerticalTextAlignment="Center" />
+			  </StackLayout>
+		</Grid>
+		<Grid Padding="10,0,0,0">
+			<ListView ItemsSource="{Binding Source={x:Reference Name=Root}, Path=Items}"
+					  IsRefreshing="{Binding Source={x:Reference Name=Root}, Path=IsBusy}"
+					  IsPullToRefreshEnabled="true" RefreshCommand="{Binding Source={x:Reference Name=Root}, Path=RefreshCommand}">
+				<ListView.ItemTemplate>
+					<DataTemplate>
+						<ViewCell>
+							<Grid Padding="10,0,0,0">
+								<Label Text="{Binding Path=Title}" FontSize="20">
+									<Label.GestureRecognizers>
+										<TapGestureRecognizer Command="{Binding Source={x:Reference Name=Root}, Path=TappedCommand}" CommandParameter="{Binding}" />
+									</Label.GestureRecognizers>	
+								</Label>
+							</Grid>
+						</ViewCell>
+					</DataTemplate>
+				</ListView.ItemTemplate>
 			</ListView>
+		</Grid>
 	</StackLayout>
 </ContentPage>

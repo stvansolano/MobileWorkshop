@@ -82,3 +82,8 @@ Include *INTERNET* permission for Android project
 - [Adding Material Design to Xamarin.Forms Apps](https://blog.xamarin.com/material-design-for-your-xamarin-forms-android-apps/)
 - [Material Design for Android apps](https://blog.xamarin.com/introduction-to-android-material-design/)
 - [Extending the Android ToolBar](https://blog.xamarin.com/android-tips-hello-toolbar-goodbye-action-bar/)
+
+### Web Services links
+
+- [http://json2csharp.com/](http://json2csharp.com/)
+- [Firebase](https://www.firebase.com/)

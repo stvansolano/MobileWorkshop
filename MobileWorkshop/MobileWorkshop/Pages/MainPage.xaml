@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
-									xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-									x:Class="MobileWorkshop.Pages.MainPage"
-									Title="Mobile Workshop">
+				  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+				  x:Class="MobileWorkshop.Pages.MainPage"
+				  Title="Mobile Workshop">
 	<MasterDetailPage.Master>
 		<ContentPage Title="Menu" BackgroundColor="#404040">
 			<ContentPage.Icon>
@@ -21,7 +21,7 @@
 
 			<Grid RowSpacing="0">
 				<Grid.RowDefinitions>
-					<RowDefinition Height="auto" />
+					<RowDefinition Height="0.3*" />
 					<RowDefinition Height="5" />
 					<RowDefinition Height="*" />
 				</Grid.RowDefinitions>
@@ -32,10 +32,12 @@
 				</Grid.ColumnDefinitions>
 
 				<StackLayout Orientation="Horizontal"
-				             Grid.ColumnSpan="2">
+							 Grid.ColumnSpan="2"
+							 VerticalOptions="EndAndExpand">
 					<StackLayout Orientation="Vertical">
-						<Label Text="Menu" FontSize="20"
-						       TextColor="White"/>
+						<Label Text="Menu" FontSize="26"
+						       TextColor="White"
+						       />
 					</StackLayout>
 				</StackLayout>
 
@@ -56,7 +58,7 @@
 					
 					<Label x:Name="ControlsLabel" Grid.Row="0"
 								 Text="Basic controls"
-								 TextColor="White"
+								 TextColor="White" FontSize="16"
 								 VerticalOptions="CenterAndExpand">
 						<Label.GestureRecognizers>
 							<TapGestureRecognizer Command="{Binding Path=BasicControlsCommand}" />
@@ -83,7 +85,7 @@
 					<Label x:Name="ListViewLabel"
 									Grid.Row="1" Grid.Column="0"
 									Text="ListView"
-									TextColor="White"
+									TextColor="White" FontSize="16"
 									VerticalOptions="CenterAndExpand">
 						<Label.GestureRecognizers>
 							<TapGestureRecognizer Command="{Binding Path=DataCommand}" />
@@ -93,7 +95,7 @@
 					<Label x:Name="HelloWorldLabel" 
 								 Grid.Row="2" Grid.Column="0"
 								 Text="Hello World"
-								 TextColor="White"
+								 TextColor="White" FontSize="16"
 								 VerticalOptions="CenterAndExpand">
 						<Label.GestureRecognizers>
 							<TapGestureRecognizer Command="{Binding Path=HelloWorldCommand}" />
@@ -102,8 +104,8 @@
 
 					<Label x:Name="CustomGridLabel"
 								 Grid.Row="3" Grid.Column="0"
-								 Text="Custom grid"
-								 TextColor="White"
+								 Text="Web Services"
+								 TextColor="White" FontSize="16"
 								 VerticalOptions="CenterAndExpand">
 						<Label.GestureRecognizers>
 							<TapGestureRecognizer Command="{Binding Path=CustomGridCommand}" />

@@ -28,25 +28,9 @@
             try
             {
                 var json = await Get("/Categories/.json").ConfigureAwait(false);
-				dynamic dictionary = JsonConvert.DeserializeObject<object>(json);
+				var parsed = JsonConvert.DeserializeObject<List<Category>>(json);
 
-				foreach (var item in dictionary) {
-					var articles = new List<Article>();
-
-					var category = new Category { 
-						Title = item.Category.Title,
-						Articles = articles
-					};
-
-					result.Add(category);
-
-					if (item.Category.Articles == null) {
-						continue;
-					}
-					foreach (var child in item.Category.Articles) {
-						articles.Add(new Article { Title = child.Title, Text = child.Text});
-					}
-										}
+				return parsed;
             }
             catch (Exception ex)
             {

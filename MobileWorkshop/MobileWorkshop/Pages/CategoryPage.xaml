@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+			 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+			 x:Class="MobileWorkshop.CategoryPage"
+			 Title="{Binding Path=Title}">
+	<StackLayout Orientation="Vertical">
+    	<Grid BackgroundColor="#2196F3"
+			  HeightRequest="60">
+			<StackLayout Orientation="Horizontal"
+			  			   Padding="10,0,0,0">
+				<Label Text="Articles: " FontSize="20" TextColor="White" VerticalTextAlignment="Center" />
+				<Label Text="{Binding Path=Articles.Count}" FontSize="20" TextColor="White" VerticalTextAlignment="Center" />
+			</StackLayout>
+		</Grid>
+
+	    <ListView ItemsSource="{Binding Path=Articles}" HasUnevenRows="true">
+			<ListView.ItemTemplate>
+				<DataTemplate>
+					<ViewCell>
+						<StackLayout Orientation="Vertical"
+									 Padding="10,0,0,0"
+									 HeightRequest="50">
+							<Label Text="{Binding Path=Title}" FontSize="20" FontAttributes="Bold" />
+							<ScrollView>
+								<Label Text="{Binding Path=Text}" />
+							</ScrollView>
+						</StackLayout>
+					</ViewCell>
+				</DataTemplate>
+			</ListView.ItemTemplate>
+		</ListView>
+	</StackLayout>
+</ContentPage>

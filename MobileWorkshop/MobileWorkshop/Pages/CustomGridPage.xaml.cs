@@ -6,13 +6,18 @@
 	using Xamarin.Forms;
 	using System.Windows.Input;
 
-    public partial class CustomGridPage
+    public partial class CustomGridPage : ContentPage
     {
+		public ICommand RefreshCommand { get; set; }
+		protected FeedService FeedService { get; set; }
+		public ObservableCollection<Category> Items { get; set; }
+		public ICommand TappedCommand { get; set; }
+
         public CustomGridPage(FeedService feedService)
         {
             FeedService = feedService;
 			RefreshCommand = new Command (() => LoadAsync ());
-
+			TappedCommand = new Command<Category> (category => BrowseCategory(category));
 			Items = new ObservableCollection<Category> ();
             InitializeComponent();
 
@@ -31,8 +36,9 @@
 			this.IsBusy = false;
         }
 
-		public ICommand RefreshCommand { get; set; }
-        protected FeedService FeedService { get; set; }
-		public ObservableCollection<Category> Items { get; set; }
+		private void BrowseCategory(Category item)
+		{
+			base.Navigation.PushAsync(new CategoryPage (item));
+		}
     }
 }
