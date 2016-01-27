@@ -11,14 +11,15 @@
 		</OnPlatform>
 	</ContentPage.Padding>
 	<StackLayout Orientation="Vertical">
-		<Grid BackgroundColor="#2196F3"
-			  HeightRequest="60">
+		<Grid HeightRequest="60">
 			  <StackLayout Orientation="Horizontal"
 			  			   Padding="10,0,0,0">
-  			   	<Label Text="Categories" FontSize="20" TextColor="White" VerticalTextAlignment="Center" />
+  			   	<Label Text="Categories" FontSize="20" VerticalTextAlignment="Center" />
 			  </StackLayout>
 		</Grid>
-		<Grid Padding="10,0,0,0">
+		<StackLayout Orientation="Vertical" Padding="10,0,0,0">
+			<Entry x:Name="CurrentItem" />
+
 			<ListView ItemsSource="{Binding Source={x:Reference Name=Root}, Path=Items}"
 					  IsRefreshing="{Binding Source={x:Reference Name=Root}, Path=IsBusy}"
 					  IsPullToRefreshEnabled="true" RefreshCommand="{Binding Source={x:Reference Name=Root}, Path=RefreshCommand}">
@@ -36,6 +37,6 @@
 					</DataTemplate>
 				</ListView.ItemTemplate>
 			</ListView>
-		</Grid>
+		</StackLayout>
 	</StackLayout>
 </ContentPage>

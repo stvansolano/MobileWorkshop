@@ -9,6 +9,7 @@ namespace Shared
     using System.Linq;
     using System.Threading.Tasks;
     using Newtonsoft.Json;
+	using System.Text;
 
     public abstract class RestService
     {
@@ -70,5 +71,23 @@ namespace Shared
             }
             return string.Empty;
         }
+
+
+		protected async Task<HttpResponseMessage> Post<T>(string resource, T instance) where T: class
+		{
+			try
+			{
+				using (var httpClient = CreateClient())
+				{
+					var json = JsonConvert.SerializeObject(instance);
+					return await httpClient.PostAsync(resource, new StringContent(json, Encoding.UTF8, "application/json")).ConfigureAwait(false);
+				}
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Message);
+			}
+			return new HttpResponseMessage{ StatusCode = System.Net.HttpStatusCode.BadRequest };
+		}
     }
 }

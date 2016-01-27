@@ -22,6 +22,21 @@
             InitializeComponent();
 
 			LoadAsync ();
+
+			CurrentItem.Completed += (sender, args) =>
+			{
+				if (string.IsNullOrEmpty(CurrentItem.Text))
+				{
+					return;
+				}
+
+				FeedService.Post(new Category { Title = CurrentItem.Text });
+
+				CurrentItem.Text = string.Empty;
+				CurrentItem.Focus();
+
+				LoadAsync();
+			};
         }
 
         private async void LoadAsync()
@@ -38,7 +53,7 @@
 
 		private void BrowseCategory(Category item)
 		{
-			base.Navigation.PushAsync(new CategoryPage (item));
+			base.Navigation.PushAsync (new CategoryPage (item));
 		}
     }
 }

@@ -1,9 +1,14 @@
 
 #Xamarin 4 Workshop
 
-## Requirements
+- Xamarin.Forms (Cross-platform framework with XAML/C#)
+- Json.Net (JSON serialization/deserialization)
+- Xam.Plugin.Connectivity (Network Connectivity Plugin)
+- ModernHttpClient
+- Firebase (A  free and powerfull NoSQL cloud database solution)
 
-System requirements: 
+# Computer requirements
+
 https://developer.xamarin.com/guides/xamarin-forms/getting-started/installation/
 
 ## Getting Xamarin installed
@@ -29,9 +34,11 @@ In Xamarin Studio:
 
 ![Setup](http://stvansolano.github.io/2016/01/04/Workshop-de-Xamarin-4-en-BrainStation/setup.png)
 
-Let's inspect the App.cs main code that which is responsible for supporting the UI for all the platforms running our app:
+Let's inspect the App.xaml.cs main code that which is responsible for supporting the UI for all the platforms running our app:
 
-By doing so will get:
+![Setup](http://stvansolano.github.io/2016/01/04/Workshop-de-Xamarin-4-en-BrainStation/heloWorldCode.png)
+
+At a glance, with a Xamarin.Forms solution contains:
 
 - A Xamarin.Forms project for sharing XAML/C# code between platforms
 - Android project referencing Xamarin.Forms
@@ -68,7 +75,11 @@ For basic Material Design do the following:
 PCL -> Packages folder section-> Add Package -> Xam.Plugin.Connectivity
 PCL -> Packages folder section-> Add Package -> Microsoft.Net.Http
 
-Include *INTERNET* permission for Android project
+Include *INTERNET* permission for Android project in AmdroidManifiest.xml
+
+
+#### Handling Firebase key-string indexes & Json.Net
+Dictionary<string, Category>
 
 ## Additional resources & links.
 - [Introducing Xamarin 4](https://blog.xamarin.com/introducing-xamarin-4/)

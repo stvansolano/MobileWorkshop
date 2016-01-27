@@ -4,11 +4,10 @@
 			 x:Class="MobileWorkshop.CategoryPage"
 			 Title="{Binding Path=Title}">
 	<StackLayout Orientation="Vertical">
-    	<Grid BackgroundColor="#2196F3"
-			  HeightRequest="60">
+    	<Grid HeightRequest="60">
 			<StackLayout Orientation="Horizontal"
 			  			   Padding="10,0,0,0">
-				<Label Text="Articles: " FontSize="20" TextColor="White" VerticalTextAlignment="Center" />
+				<Label Text="Articles: " FontSize="20" VerticalTextAlignment="Center" />
 				<Label Text="{Binding Path=Articles.Count}" FontSize="20" TextColor="White" VerticalTextAlignment="Center" />
 			</StackLayout>
 		</Grid>
@@ -21,9 +20,7 @@
 									 Padding="10,0,0,0"
 									 HeightRequest="50">
 							<Label Text="{Binding Path=Title}" FontSize="20" FontAttributes="Bold" />
-							<ScrollView>
-								<Label Text="{Binding Path=Text}" />
-							</ScrollView>
+							<Label Text="{Binding Path=Text}" />
 						</StackLayout>
 					</ViewCell>
 				</DataTemplate>

@@ -4,8 +4,14 @@
 
     public class Category
     {
+
+		public Category ()
+		{
+			Articles = new Article[0];
+		}
+
         public string Title { get; set; }
 
-		public IEnumerable<Article> Articles { get; set; }
+		public ICollection<Article> Articles { get; set; }
     }
 }
