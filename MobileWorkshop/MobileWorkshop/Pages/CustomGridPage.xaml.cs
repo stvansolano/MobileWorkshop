@@ -1,4 +1,6 @@
-﻿namespace MobileWorkshop.Pages
+﻿using System.Threading.Tasks;
+
+namespace MobileWorkshop.Pages
 {
     using System.Collections.ObjectModel;
     using Shared;
@@ -16,40 +18,51 @@
         public CustomGridPage(FeedService feedService)
         {
             FeedService = feedService;
-			RefreshCommand = new Command (() => LoadAsync ());
+			RefreshCommand = new Command (async() => LoadAsync ());
 			TappedCommand = new Command<Category> (category => BrowseCategory(category));
 			Items = new ObservableCollection<Category> ();
-            InitializeComponent();
+            
+			InitializeComponent();
 
-			LoadAsync ();
+			Load();
 
-			CurrentItem.Completed += (sender, args) =>
+			CurrentItem.Completed += async (sender, args) =>
 			{
-				if (string.IsNullOrEmpty(CurrentItem.Text))
-				{
-					return;
-				}
-
-				FeedService.Post(new Category { Title = CurrentItem.Text });
-
-				CurrentItem.Text = string.Empty;
-				CurrentItem.Focus();
-
-				LoadAsync();
+				AddItem();
+				await LoadAsync().ConfigureAwait(false);
 			};
         }
 
-        private async void LoadAsync()
+		private async void AddItem()
+		{
+			if (string.IsNullOrEmpty(CurrentItem.Text))
+			{
+				return;
+			}
+
+			CurrentItem.Text = string.Empty;
+			CurrentItem.Focus();
+
+			await FeedService.Post(new Category { Title = CurrentItem.Text });
+		}
+
+        private async void Load()
         {
 			IsBusy = true;
 			Items.Clear ();
+
 			var result = await FeedService.GetCategories().ConfigureAwait(false);
 
-			foreach (var item in result) {
+			foreach (Category item in result) {
 				Items.Add (item);
 			}
-			this.IsBusy = false;
+			IsBusy = false;
         }
+
+		public Task LoadAsync()
+		{
+			return Task.Factory.StartNew(Load);
+		}
 
 		private void BrowseCategory(Category item)
 		{

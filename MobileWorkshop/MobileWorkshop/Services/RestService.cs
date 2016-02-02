@@ -35,6 +35,19 @@ namespace Shared
             return httpClient;
         }
 
+		protected async Task<string> Get(string resource)
+		{
+			using (var httpClient = CreateClient())
+			{
+				var response = await httpClient.GetAsync(resource).ConfigureAwait(false);
+				if (response.IsSuccessStatusCode)
+				{
+					return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
+				}
+			}
+			return string.Empty;
+		}
+
         protected async Task<IEnumerable<T>> Get<T>(string resource) where T: class
         {
             try
@@ -58,20 +71,6 @@ namespace Shared
             }
             return Enumerable.Empty<T>();
         }
-
-        protected async Task<string> Get(string resource)
-        {
-            using (var httpClient = CreateClient())
-            {
-                var response = await httpClient.GetAsync(resource).ConfigureAwait(false);
-                if (response.IsSuccessStatusCode)
-                {
-                    return await response.Content.ReadAsStringAsync().ConfigureAwait(false);
-                }
-            }
-            return string.Empty;
-        }
-
 
 		protected async Task<HttpResponseMessage> Post<T>(string resource, T instance) where T: class
 		{

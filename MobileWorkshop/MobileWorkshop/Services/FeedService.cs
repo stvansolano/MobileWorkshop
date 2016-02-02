@@ -31,23 +31,10 @@ namespace Shared
             try
             {
 				var json = await Get("/Categories.json").ConfigureAwait(false);
-				/*
-				var parsed = JsonConvert.DeserializeObject<Dictionary<string, dynamic>>(json);
 
-				foreach (var parsingItem in parsed) {
-					var jsonCategory =  (parsingItem.Value as JObject).Children();
-
-					var jsonArticles = jsonCategory.FirstOrDefault(item => item is JArray);
-					var category = new Category();
-
-					if (jsonArticles != null) {
-						var array = jsonArticles as JArray;
-						foreach (var content in array.OfType<JProperty>()) {
-							category.Articles.Add(new Article { Title = content.Value.ToString()});
-						}
-					}
-				}*/
+				// JSON.Net deserialization
 				var parsed = JsonConvert.DeserializeObject<Dictionary<object, Category>>(json);
+
 				return parsed.Values.ToArray();
             }
             catch (Exception ex)
