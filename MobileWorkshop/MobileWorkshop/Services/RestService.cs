@@ -88,5 +88,21 @@ namespace Shared
 			}
 			return new HttpResponseMessage{ StatusCode = System.Net.HttpStatusCode.BadRequest };
 		}
+
+		protected async Task<HttpResponseMessage> Delete(string id)
+		{
+			try
+			{
+				using (var httpClient = CreateClient())
+				{
+					return await httpClient.DeleteAsync(id).ConfigureAwait(false);
+				}
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Message);
+			}
+			return new HttpResponseMessage{ StatusCode = System.Net.HttpStatusCode.BadRequest };
+		}
     }
 }

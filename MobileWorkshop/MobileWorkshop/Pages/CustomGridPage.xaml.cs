@@ -14,22 +14,23 @@ namespace MobileWorkshop.Pages
 		protected FeedService FeedService { get; set; }
 		public ObservableCollection<Category> Items { get; set; }
 		public ICommand TappedCommand { get; set; }
+		public ICommand DeleteCommand { get; set; }
 
         public CustomGridPage(FeedService feedService)
         {
             FeedService = feedService;
-			RefreshCommand = new Command (async() => LoadAsync ());
+			RefreshCommand = new Command (async() => await LoadAsync ());
 			TappedCommand = new Command<Category> (category => BrowseCategory(category));
+			DeleteCommand = new Command<Category> (category => DeleteCategory(category));
 			Items = new ObservableCollection<Category> ();
             
 			InitializeComponent();
 
 			Load();
 
-			CurrentItem.Completed += async (sender, args) =>
+			CurrentItem.Completed += (sender, args) =>
 			{
 				AddItem();
-				await LoadAsync().ConfigureAwait(false);
 			};
         }
 
@@ -40,19 +41,23 @@ namespace MobileWorkshop.Pages
 				return;
 			}
 
+			IsBusy = true;
+			var posted = new Category { Title = CurrentItem.Text };
+			await FeedService.Post(posted);
+			IsBusy = false;
+
+			Items.Add (posted);
 			CurrentItem.Text = string.Empty;
 			CurrentItem.Focus();
-
-			await FeedService.Post(new Category { Title = CurrentItem.Text });
 		}
 
         private async void Load()
         {
 			IsBusy = true;
-			Items.Clear ();
 
 			var result = await FeedService.GetCategories().ConfigureAwait(false);
 
+			Items.Clear ();
 			foreach (Category item in result) {
 				Items.Add (item);
 			}
@@ -67,6 +72,21 @@ namespace MobileWorkshop.Pages
 		private void BrowseCategory(Category item)
 		{
 			base.Navigation.PushAsync (new CategoryPage (item));
+		}
+			
+		private async void DeleteCategory(Category item)
+		{
+			var result = await base.DisplayAlert ("Confirm delete", "Delete selected item?", "Delete", "Cancel").ConfigureAwait (false);
+
+			if (result == false) {
+				return;
+			}
+
+			Items.Remove(item);
+
+			IsBusy = true;
+			await FeedService.Delete (item).ConfigureAwait(false);
+			IsBusy = false;
 		}
     }
 }

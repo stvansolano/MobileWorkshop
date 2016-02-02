@@ -27,12 +27,14 @@
 					<DataTemplate>
 						<ViewCell>
 							<Grid Padding="10,0,0,0">
-								<Label Text="{Binding Path=Title}" FontSize="20">
-									<Label.GestureRecognizers>
+								<Label Text="{Binding Path=Title}" FontSize="20" />
+									<!--<Label.GestureRecognizers>
 										<TapGestureRecognizer Command="{Binding Source={x:Reference Name=Root}, Path=TappedCommand}" CommandParameter="{Binding}" />
-									</Label.GestureRecognizers>	
-								</Label>
+									</Label.GestureRecognizers>-->
 							</Grid>
+							<ViewCell.ContextActions>
+								<MenuItem Text="Delete" Command="{Binding Source={x:Reference Name=Root}, Path=DeleteCommand}" CommandParameter="{Binding}" />
+							</ViewCell.ContextActions>
 						</ViewCell>
 					</DataTemplate>
 				</ListView.ItemTemplate>

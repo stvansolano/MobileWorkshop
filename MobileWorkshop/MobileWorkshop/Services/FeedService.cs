@@ -33,8 +33,11 @@ namespace Shared
 				var json = await Get("/Categories.json").ConfigureAwait(false);
 
 				// JSON.Net deserialization
-				var parsed = JsonConvert.DeserializeObject<Dictionary<object, Category>>(json);
+				var parsed = JsonConvert.DeserializeObject<Dictionary<string, Category>>(json);
 
+				foreach (var item in parsed) {
+					item.Value.Id = item.Key;
+				}
 				return parsed.Values.ToArray();
             }
             catch (Exception ex)
@@ -67,5 +70,30 @@ namespace Shared
 		}
 
 
+		public async Task<bool> Delete(Category instance)
+		{
+			if (Network.IsConnected == false)
+			{
+				return false;
+			}
+
+			if (string.IsNullOrEmpty(instance.Id)) {
+				return false;
+			}
+
+			try
+			{
+				var call = string.Format("/Categories/{0}/.json", instance.Id);
+				var result = await Delete(call).ConfigureAwait(false);
+
+				return result != null && result.StatusCode == HttpStatusCode.OK;
+			}
+			catch (Exception ex)
+			{
+				Debug.WriteLine(ex.Message);
+			}
+
+			return false;
+		}
     }
 }
