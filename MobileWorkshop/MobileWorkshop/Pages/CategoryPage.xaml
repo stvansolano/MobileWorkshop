@@ -11,16 +11,15 @@
 				<Label Text="{Binding Path=Articles.Count}" FontSize="20" TextColor="White" VerticalTextAlignment="Center" />
 			</StackLayout>
 		</Grid>
-
-	    <ListView ItemsSource="{Binding Path=Articles}" HasUnevenRows="true">
+		<ListView ItemsSource="{Binding Path=Articles}" HasUnevenRows="true">
 			<ListView.ItemTemplate>
 				<DataTemplate>
 					<ViewCell>
 						<StackLayout Orientation="Vertical"
 									 Padding="10,0,0,0"
 									 HeightRequest="50">
-							<Label Text="{Binding Path=Title}" FontSize="20" FontAttributes="Bold" />
-							<Label Text="{Binding Path=Text}" />
+							<Label Text="{Binding Path=Title}" FontSize="Medium" FontAttributes = "Bold" TextColor = "Black" LineBreakMode="NoWrap"/>
+							<Label Text="{Binding Text}" FontSize="Small" LineBreakMode="WordWrap" TextColor = "Black"/>
 						</StackLayout>
 					</ViewCell>
 				</DataTemplate>

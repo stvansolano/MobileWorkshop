@@ -2,7 +2,65 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MobileWorkshop.Views.HelloWorldPage">
-	<StackLayout VerticalOptions="Center">
-		<Label FontSize="20" Text="Hello World, Xamarin Forms!" VerticalTextAlignment="Center" HorizontalTextAlignment="Center" />
-	</StackLayout>
+	<ScrollView StyleId="aboutScroll">
+		<Grid VerticalOptions="Fill" StyleId="aboutPage">
+			<Grid.RowDefinitions>
+				<RowDefinition Height="*" />
+				<RowDefinition Height="Auto" />
+			</Grid.RowDefinitions>
+
+			<StackLayout Spacing="30" Padding="20,20,20,0" VerticalOptions="Center">
+				<StackLayout Spacing="6" VerticalOptions="Center">
+					<Label Text="Welcome" FontSize="32" FontAttributes="Bold" XAlign="Center" HorizontalOptions="Center" />
+
+					<Label x:Name="versionLabel" FontSize="Small" XAlign="Center" HorizontalOptions="Center" />
+
+					<Label Text="Mobile Workshop v1.0" FontSize="Medium" XAlign="Center" HorizontalOptions="Center" />
+				</StackLayout>
+
+				<StackLayout>
+					<Label Text="Featured the following platforms/frameworks:" FontSize="Small" XAlign="Center" HorizontalOptions="Center"/>
+					<Label HorizontalOptions="Center" FontSize="16">
+						<Label.FormattedText>
+							<FormattedString>
+								<FormattedString.Spans>
+									<Span Text="&#x2022; Xamarin.Forms&#10;" />
+									<Span Text="    &#x2022; XAML&#10;" />
+									<Span Text="    &#x2022; Bindings&#10;" />
+									<!--<Span Text="    &#x2022; Converters&#10;" />-->
+									<Span Text="    &#x2022; Styles&#10;" />
+									<!--<Span Text="    &#x2022; IoC&#10;" />
+									<Span Text="    &#x2022; Messaging Center&#10;" />
+									<Span Text="    &#x2022; Custom Controls&#10;" />
+									<Span Text="    &#x2022; Custom Renderers&#10;" />
+									<Span Text="    &#x2022; ImageCircle Plugin&#10;" />
+									<Span Text="&#x2022; Xamarin Insights&#10;" />
+									<Span Text="&#x2022; Xamarin Test Cloud&#10;" />
+									<Span Text="    &#x2022; UITest&#10;" />
+									<Span Text="    &#x2022; Extensions&#10;" />-->
+									<Span Text="    &#x2022; Single code-base for iOS and Android&#10;" />
+									<!--<Span Text="&#x2022; Azure Mobile Services&#10;" />
+									<Span Text="    &#x2022; C# backend&#10;" />
+									<Span Text="    &#x2022; WebAPI&#10;" />
+									<Span Text="    &#x2022; Entity Framework&#10;" />
+									<Span Text="    &#x2022; Cross-platform templated push notifications&#10;" />-->
+									<Span Text="&#x2022; Xamarin.iOS&#10;" />
+									<Span Text="&#x2022; Xamarin.Android&#10;" />
+								</FormattedString.Spans>
+							</FormattedString>
+						</Label.FormattedText>
+					</Label>
+				</StackLayout>
+			</StackLayout>
+
+			<!--
+			<StackLayout Grid.Row="1" Padding="24,10,24,14" Spacing="14">
+				<Button Text="VIEW SOURCE" StyleId="sourceButton" HorizontalOptions="FillAndExpand"/>
+
+				<Button Text="ABOUT XAMARIN.FORMS" StyleId="xamarinButton" HorizontalOptions="FillAndExpand"
+													 />
+			</StackLayout>
+			-->
+		</Grid>
+	</ScrollView>
 </ContentPage>
