@@ -4,20 +4,30 @@
              x:Class="MobileWorkshop.Pages.BasicControlsPage">
 	<ScrollView>
 		<StackLayout Orientation="Vertical"
-								 Padding="5,0,0,0">
+					 HorizontalOptions="Center"
+					 Padding="5,0,0,0">
+
 			<Switch />
+
+			<Label Text="Entry text:" />
 			<Entry />
 			<Button Text="Button" Command="{Binding Path=MessageCommand}" />
 			
 			<Label Text="Date:" />
 			<DatePicker />
-			
-			<SearchBar Text="Search bar" />
-			
-			<Slider x:Name="SliderControl" Value="10" />
-			
-			<Label Text="Progress indicator:"></Label>
+
+			<Label Text="Picker:" />
+			<Picker x:Name="PickerControl" />
+
+			<Stepper x:Name="StepperControl" Minimum="0" Maximum="100" Value="1" />
+			<Label Text="{Binding Source={x:Reference Name=StepperControl}, Path=Value}" />
+
+			<SearchBar Text="" />
+
+			<Label Text="Slider indicator:" />
+			<Slider x:Name="SliderControl" Value="10" />			
 			<ProgressBar Progress="{Binding Source={x:Reference Name=SliderControl}, Path=Value}" />
+
 		</StackLayout>
 	</ScrollView>
 </ContentPage>
