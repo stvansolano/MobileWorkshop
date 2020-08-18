@@ -12,20 +12,29 @@ namespace MobileWorkshop.ViewModels
 {
 	public class ItemsViewModel : BaseViewModel
 	{
-		public ObservableCollection<Item> Items { get; set; }
+		public ObservableCollection<ItemDetailViewModel> Items { get; set; }
 		public Command LoadItemsCommand { get; set; }
+		public INavigation Navigation { get; private set; }
 
-		public ItemsViewModel()
+		public ItemsViewModel(INavigation navigation)
 		{
 			Title = "Browse";
-			Items = new ObservableCollection<Item>();
+			Items = new ObservableCollection<ItemDetailViewModel>();
 			LoadItemsCommand = new Command(async () => await ExecuteLoadItemsCommand());
+			Navigation = navigation;
 
 			MessagingCenter.Subscribe<NewItemPage, Item>(this, "AddItem", async (obj, item) =>
 			{
 				var newItem = item as Item;
-				Items.Add(newItem);
+				Items.Add(new ItemDetailViewModel(Navigation, item));
 				await DataStore.AddItemAsync(newItem);
+			});
+
+			MessagingCenter.Subscribe<ItemDetailViewModel, Item>(this, "UpdateItem", async (obj, item) =>
+			{
+				var newItem = item as Item;
+
+				await DataStore.UpdateItemAsync(newItem);
 			});
 		}
 
@@ -39,7 +48,7 @@ namespace MobileWorkshop.ViewModels
 				var items = await DataStore.GetItemsAsync(true);
 				foreach (var item in items)
 				{
-					Items.Add(item);
+					Items.Add(new ItemDetailViewModel(Navigation, item));
 				}
 			}
 			catch (Exception ex)

@@ -24,14 +24,14 @@ namespace MobileWorkshop.Views
 		{
 			InitializeComponent();
 
-			BindingContext = viewModel = new ItemsViewModel();
+			BindingContext = viewModel = new ItemsViewModel(Navigation);
 		}
 
 		async void OnItemSelected(object sender, EventArgs args)
 		{
 			var layout = (BindableObject)sender;
-			var item = (Item)layout.BindingContext;
-			await Navigation.PushAsync(new ItemDetailPage(new ItemDetailViewModel(item)));
+			var item = (ItemDetailViewModel)layout.BindingContext;
+			await Navigation.PushAsync(new ItemDetailPage(item));
 		}
 
 		async void AddItem_Clicked(object sender, EventArgs e)

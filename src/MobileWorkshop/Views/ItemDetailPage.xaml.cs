@@ -32,7 +32,7 @@ namespace MobileWorkshop.Views
 				Description = "This is an item description."
 			};
 
-			viewModel = new ItemDetailViewModel(item);
+			viewModel = new ItemDetailViewModel(Navigation, item);
 			BindingContext = viewModel;
 		}
 	}
