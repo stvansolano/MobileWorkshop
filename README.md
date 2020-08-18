@@ -22,6 +22,15 @@ If you like or are using this project to learn or start your own solution, pleas
 
 3. Hit Run!
 
+## Screenshots
+
+| Screen |    Android  |      iOS.    |
+|--------|-------------|--------------|
+| Main   | [screenshot1](https://github.com/stvansolano/MobileWorkshop/blob/main/screenshots/android_main.png) | [screenshot2](https://github.com/stvansolano/MobileWorkshop/blob/main/screenshots/ios_main.png)  |
+| Menu   | [screenshot3](https://github.com/stvansolano/MobileWorkshop/blob/main/screenshots/android_menu.png) | [screenshot4](https://github.com/stvansolano/MobileWorkshop/blob/main/screenshots/ios_menu.png)  |
+| New    | [screenshot5](https://github.com/stvansolano/MobileWorkshop/blob/main/screenshots/android_new.png) | [screenshot6](https://github.com/stvansolano/MobileWorkshop/blob/main/screenshots/ios_new.png)  |
+| About  | [screenshot7](https://github.com/stvansolano/MobileWorkshop/blob/main/screenshots/android_about.png) | [screenshot8](https://github.com/stvansolano/MobileWorkshop/blob/main/screenshots/ios_about.png)  |
+
 ## Exercises:
 
 ### 1. Understanding MVVM structure (MobileWorkshop.csproj)
@@ -203,3 +212,4 @@ public ItemsViewModel(INavigation navigation)
 
 
 3.3. Change the App.xaml.cs to use `CustomShell` class instead of `AppShell` (default View)
+
