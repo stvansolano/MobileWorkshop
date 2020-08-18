@@ -22,3 +22,58 @@ If you like or are using this project to learn or start your own solution, pleas
 
 3. Hit Run!
 
+## Exercises:
+
+### 1. Understanding MVVM structure (MobileWorkshop.csproj)
+.
++-- _Views
+|   +-- ItemsPage.xaml / .xaml.cs
+|   +-- ItemdDetailPage.xaml / .xaml.cs
++-- _ViewModels
+|   +-- ItemsViewModel.cs
+|   +-- ItemdDetailViewModel.cs
++-- Models
+|   +-- Item.cs
++-- Services
+|   +-- MockDataStore.cs 
+|   +-- IDataStore.cs (interface) 
++-- App.xaml / .xaml.cs
++-- AppShell.xaml / .xaml.cs
+
+1.1 Modifiy `ItemDetailPage.xaml` (View)
+
+        ```
+        <Button Text="Save" CornerRadius="10" BackgroundColor="Gold" TextColor="Black" Command="{Binding SaveCommand}" />
+        ```
+
+1.2 Modify `ItemsPage.xaml` (View)
+
+                        <CheckBox IsChecked="{Binding IsChecked}" />
+
+1.3 Extend `ItemdDetailViewModel.cs` (ViewModel)
+
+
+```
+		private bool _isChecked;
+		public bool IsChecked
+		{
+			get => _isChecked;
+			set => SetProperty(ref _isChecked, value);
+		}
+
+		private string _text;
+		public string Text
+		{
+			get => _text;
+			set => SetProperty(ref _text, value);
+		}
+
+		private string _description;
+		public string Description
+		{
+			get => _description;
+			set => SetProperty(ref _description, value);
+		}
+```
+
+> **Important:** Remember to set those properties!
