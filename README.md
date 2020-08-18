@@ -59,6 +59,30 @@ MobileWorkshop
 ── AppShell.xaml / .xaml.cs
 ```
 
+```
+MobileWorkshop
+│
+└───/Views
+│   └───ItemsPage.xaml (xaml|cs)
+│   └───ItemDetailPage.xaml (xaml|cs)
+│       ...
+│
+└───/ViewModels
+│   └───ItemsViewModel.cs
+│   └───ItemdDetailViewModel.cs
+│       ...
+│
+└───/Models
+│   └───Item.cs
+│   └───...
+│
+└───/Services
+    │   MockDataStore.txt
+    │   IDataStore.cs    
+── App.xaml / .xaml.cs
+── AppShell.xaml / .xaml.cs
+```
+
 1.1 Modifiy `ItemDetailPage.xaml` (View)
 
         <Button Text="Save" CornerRadius="10" BackgroundColor="Gold" TextColor="Black" Command="{Binding SaveCommand}" />
