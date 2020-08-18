@@ -40,15 +40,37 @@ If you like or are using this project to learn or start your own solution, pleas
 +-- App.xaml / .xaml.cs
 +-- AppShell.xaml / .xaml.cs
 
+```
+MobileWorkshop
+│
+└───/Views
+│   └───ItemsPage.xaml (xaml|cs)
+│   └───ItemDetailPage.xaml (xaml|cs)
+│       ...
+│
+└───/ViewModels
+│   └───ItemsViewModel.cs
+│   └───ItemdDetailViewModel.cs
+│       ...
+│
+└───/Models
+│   └───Item.cs
+│   └───...
+│
+└───/Services
+    │   MockDataStore.txt
+    │   IDataStore.cs    
+── App.xaml / .xaml.cs
+── AppShell.xaml / .xaml.cs
+```
+
 1.1 Modifiy `ItemDetailPage.xaml` (View)
 
-        ```
         <Button Text="Save" CornerRadius="10" BackgroundColor="Gold" TextColor="Black" Command="{Binding SaveCommand}" />
-        ```
 
 1.2 Modify `ItemsPage.xaml` (View)
 
-                        <CheckBox IsChecked="{Binding IsChecked}" />
+       <CheckBox IsChecked="{Binding IsChecked}" />
 
 1.3 Extend `ItemdDetailViewModel.cs` (ViewModel)
 
