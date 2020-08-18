@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MobileWorkshop.Views.HeaderView"
+             HeightRequest="120">
+    <StackLayout Orientation="Vertical"
+                 BackgroundColor="LightBlue">
+        <Label Text="Welcome" Margin="5" />
+        <Image Source="xamarin_logo" />
+    </StackLayout>
+</ContentView>
