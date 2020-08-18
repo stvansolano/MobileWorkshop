@@ -1,7 +1,6 @@
-﻿using System;
-using System.Windows.Input;
+﻿using System.Windows.Input;
 using MobileWorkshop.Models;
-using MobileWorkshop.Views;
+using Xamarin.Forms;
 
 namespace MobileWorkshop.ViewModels
 {
@@ -9,11 +8,27 @@ namespace MobileWorkshop.ViewModels
 	{
 		public Item Item { get; set; }
 
-		public ItemDetailViewModel(Item item = null)
+		public ItemDetailViewModel(INavigation navigation, Item item = null)
 		{
 			Title = item?.Text;
 			Item = item;
 
+			Text = item.Text;
+			Description = item.Description;
+
+			SaveCommand = new Xamarin.Forms.Command(async() => {
+
+				Item.Description = Description;
+				item.Text = Text;
+
+				Xamarin.Forms.MessagingCenter.Send(this, "UpdateItem", Item);
+
+				await navigation.PopAsync();
+			});
+		}
+
+		private void Update(Item item)
+		{
 			Text = item.Text;
 			Description = item.Description;
 		}
